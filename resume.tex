@@ -1,0 +1,372 @@
+\documentclass[a4paper,11pt]{article}
+
+% ================== PACKAGE IMPORTS ==================
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ================== FONT ==================
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+
+% ================== HYPERLINKS ==================
+\usepackage[hidelinks]{hyperref}
+
+% ================== COLOR DEFINITIONS ==================
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% ================== PAGE LAYOUT ==================
+\setlength{\multicolsep}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\geometry{
+    left=1.4cm,
+    top=0.7cm,
+    right=1.2cm,
+    bottom=0.7cm
+}
+
+\setlength{\footskip}{5pt}
+
+% ================== HYPERLINK SETUP ==================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue
+}
+
+% ================== SECTION FORMATTING ==================
+\titleformat{\section}
+{
+    \vspace{-4pt}
+    \scshape
+    \raggedright
+    \large
+}
+{}{0em}{}
+[
+    \color{black}\titlerule
+    \vspace{-7pt}
+]
+
+% ================== LIST SETTINGS ==================
+\setlist[itemize]{
+    leftmargin=1.3em,
+    labelsep=0.5em,
+    itemsep=0.5pt,
+    topsep=1pt,
+    parsep=0pt
+}
+
+% ================== DOCUMENT ==================
+\begin{document}
+
+% =========================================================
+% HEADER
+% =========================================================
+
+\begin{center}
+
+{\Huge\bfseries\textcolor{black}{ABHINAV KUMAR SINGH}}\\[3pt]
+
+\small
+\faPhone\ +91 6200529532
+\quad |
+\faEnvelope\ 
+\href{mailto:abhinavkrsingh83@gmail.com}
+{abhinavkrsingh83@gmail.com}
+\quad |
+\faLinkedin\ 
+\href{https://www.linkedin.com/in/abhinav-kr-singh04}
+{LinkedIn}
+\quad |
+\faGithub\ 
+\href{https://github.com/CodeMaestro-04}
+{CodeMaestro-04} \quad | Dhanbad, Jharkhand
+
+\end{center}
+
+% =========================================================
+% SUMMARY
+% =========================================================
+
+\section{\textbf{Summary}}
+
+\small{
+Full Stack Developer Intern with hands-on experience in developing and enhancing
+\textbf{web applications, REST APIs, and database-driven systems}.
+Proficient in \textbf{Java, Python, JavaScript, and SQL}, with experience in
+\textbf{React, Django, Spring Boot, PostgreSQL, and Hibernate}.
+Experienced in developing frontend features, backend services, database operations,
+and integrating application components in a professional environment.
+}
+
+% =========================================================
+% EXPERIENCE
+% =========================================================
+
+\section{\textbf{Professional Experience}}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Easy Insights Pvt. Ltd., New Delhi} & \textit{\small{10 Aug 2026 -- Present}} \\
+\textit{\small{Full Stack Developer Intern}} &
+\end{tabular*}
+
+\vspace{2pt}
+
+\noindent
+\textbf{Web Application Development}
+
+\vspace{1pt}
+
+\noindent
+\small{\textit{Tech Stack: React, JavaScript, Django REST Framework, Python, SQL, PostgreSQL, REST APIs, PostHog}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Developing and enhancing \textbf{web application features} using React and building backend services with \textbf{Django REST Framework}.
+
+\item Working with \textbf{SQL and PostgreSQL} for database operations, data retrieval, and application-level data management.
+
+\item Debugging existing features, resolving application issues, and implementing enhancements based on project requirements.
+
+\end{itemize}
+
+\vspace{1pt}
+
+\noindent
+\textbf{Task Processing \& Monitoring System}
+
+\vspace{1pt}
+
+\noindent
+\small{\textit{Tech Stack: Python, RabbitMQ, Telegram Bot API, PostgreSQL}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Built a \textbf{Telegram-based interface} integrated with company APIs for task-related operations.
+
+\item Implemented asynchronous task processing using \textbf{RabbitMQ} with worker status and failure monitoring.
+
+\item Integrated \textbf{PostgreSQL} for persistent task logging and execution-status tracking.
+
+\end{itemize}
+
+% =========================================================
+% PROJECTS
+% =========================================================
+
+\section{\textbf{Projects}}
+
+% ---------------- PROJECT 2 ----------------
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Multi SpringAI Chat App (Multi-Model AI Chat Platform)}
+&
+\href{https://github.com/CodeMaestro-04/multi-springai-chat-app}
+{\textcolor{darkblue}{\small GitHub}}
+\end{tabular*}
+
+\vspace{1.5pt}
+
+\noindent
+\small{\textit{Tech Stack: Java, Spring Boot, Spring AI, React (Vite), REST APIs, Ollama, OpenAI, Anthropic}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Built a full-stack AI chat platform integrating \textbf{OpenAI, Ollama, and Anthropic} models for multi-model response comparison.
+
+\item Developed \textbf{Spring Boot REST APIs} using Spring AI to process user prompts and communicate with multiple AI model providers.
+
+\item Designed a \textbf{React-based frontend} to send prompts and display responses from multiple AI models in parallel.
+
+\end{itemize}
+
+% ---------------- PROJECT 3 ----------------
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Aadhaar Management \& Authentication System}
+&
+\href{https://github.com/CodeMaestro-04/aadhaar-authentication-system}
+{\textcolor{darkblue}{\small GitHub}}
+\end{tabular*}
+
+\vspace{1.5pt}
+
+\noindent
+\small{\textit{Tech Stack: Java 17, Spring Boot, Spring Data JPA, Hibernate, MySQL, REST APIs, Postman}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Created \textbf{Spring Boot REST APIs} for Aadhaar and Person management with CRUD operations.
+
+\item Configured \textbf{one-to-one entity mapping} using Spring Data JPA and Hibernate for structured relational data management.
+
+\item Engineered and tested an \textbf{Aadhaar authentication API} with MySQL database integration and endpoint testing using Postman.
+
+\end{itemize}
+
+% ---------------- PROJECT 4 ----------------
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{PDF GENIE: AI-Powered PDF Question Answering Tool}
+&
+\href{https://github.com/CodeMaestro-04/Pdf-genie}
+{\textcolor{darkblue}{\small GitHub}}
+\end{tabular*}
+
+\vspace{1.5pt}
+
+\noindent
+\small{\textit{Tech Stack: Python, Gemini API}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Built an AI-powered application enabling users to query and extract information from \textbf{PDF documents with 200+ pages}.
+
+\item Engineered a semantic search pipeline using the \textbf{Gemini API} for text extraction and summarization, achieving a \textbf{95\% relevance score} in user query responses.
+
+\item Automated document analysis workflows, reducing manual document review effort by \textbf{~70\%}.
+
+\end{itemize}
+
+% ---------------- PROJECT 5 ----------------
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Employee Management System (CRUD Web Application)}
+&
+\href{https://github.com/CodeMaestro-04/Employee-Management-System-CRUD-Web-Application-}
+{\textcolor{darkblue}{\small GitHub}}
+\end{tabular*}
+
+\vspace{1.5pt}
+
+\noindent
+\small{\textit{Tech Stack: Java, Servlets, JPA (Hibernate), JSP, MySQL, HTML, CSS, JavaScript, Tomcat}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Developed a full-stack CRUD web application to manage \textbf{100+ employee records} with secure authentication and role-based access.
+
+\item Implemented \textbf{10+ JSP and HTML forms} and Servlets following the \textbf{MVC architecture} for request handling.
+
+\item Deployed the application on \textbf{Apache Tomcat} and validated functionality across multiple user workflows, improving data handling efficiency by \textbf{~35\%}.
+
+\end{itemize}
+
+% =========================================================
+% SKILLS
+% =========================================================
+
+\section{\textbf{Skills And Interests}}
+
+\noindent
+\textbf{Programming Languages: }{Java, Python, JavaScript, SQL}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Web Technologies: }{HTML, CSS, Bootstrap}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Java Technologies: }{JDBC, Servlets, JSP}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Frameworks \& Libraries: }{Hibernate, Spring Boot, Spring AI, Django, React}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{APIs \& Messaging: }{RabbitMQ, Telegram Bot API, REST APIs}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Databases: }{MySQL, PostgreSQL, Oracle}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Tools \& Platforms: }{DigitalOcean, Linux, Git, GitHub, VS Code, PostHog, Eclipse, Postman}
+
+\vspace{1.5pt}
+
+\noindent
+\textbf{Core CS Concepts: }{DSA, OOP, DBMS, SDLC}
+
+% =========================================================
+% EDUCATION
+% =========================================================
+
+\section{\textbf{Education}}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{B.Tech in Information Technology} & Kolkata \\
+\textit{Netaji Subhash Engineering College} & \textit{2023-2026} \\[2pt]
+
+\textbf{Diploma in Electrical Engineering} & Jharkhand \\
+\textit{Government Polytechnic Sahibganj} & \textit{2023} \\[2pt]
+
+\textbf{Higher Secondary} & Dhanbad \\
+\textit{D.A.V. Public School Koylanagar} & \textit{2020} \\[2pt]
+
+\textbf{Secondary} & Dhanbad \\
+\textit{D.A.V. Public School Koylanagar} & \textit{2018}
+\end{tabular*}
+
+% =========================================================
+% AWARDS
+% =========================================================
+
+\section{\textbf{Awards And Certifications}}
+
+\begin{itemize}
+
+\item Certified in \textbf{SQL} --
+\href{https://www.hackerrank.com/certificates/ccf4ffdbc49b}
+{HackerRank}
+
+\item Secured \textbf{5th place} among participating teams in the
+\textbf{DevNexus Hackathon}.
+
+\end{itemize}
+
+\end{document}

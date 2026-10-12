@@ -1,0 +1,501 @@
+/* Custom Glassmorphism, 3D Canvas, Editorial Typography & Interactive Visuals */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #10b981;
+  --primary-glow: rgba(16, 185, 129, 0.5);
+  --secondary: #14b8a6;
+  --secondary-glow: rgba(20, 184, 166, 0.4);
+  --accent: #2dd4bf;
+  --accent-neon: #34d399;
+  --sun: #fbbf24;
+  --hot: #fb7185;
+  --bg-dark: #041417;
+  --bg-card: rgba(6, 26, 30, 0.78);
+  --border-card: rgba(45, 212, 191, 0.16);
+  --text-main: #f0fdfa;
+  --text-muted: #99f6e4;
+  --display: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+  --font: 'Plus Jakarta Sans', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background-color: #030e11;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -15%, rgba(16, 185, 129, 0.22), transparent 70%),
+    radial-gradient(650px circle at 85% 18%, rgba(45, 212, 191, 0.09), transparent 60%),
+    radial-gradient(700px circle at 12% 55%, rgba(16, 185, 129, 0.07), transparent 65%),
+    radial-gradient(650px circle at 88% 82%, rgba(20, 184, 166, 0.07), transparent 65%);
+  background-attachment: fixed;
+  color: #f0fdfa;
+  overflow-x: hidden;
+  position: relative;
+  selection-background-color: #10b981;
+  selection-color: #ffffff;
+}
+
+/* Crisp Dot-Matrix Engineering Blueprint (fades smoothly to edges) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(45, 212, 191, 0.13) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 95%);
+}
+
+/* Soft Interactive Cursor Spotlight */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    550px circle at var(--mouse-x, 50vw) var(--mouse-y, 35vh),
+    rgba(45, 212, 191, 0.065),
+    transparent 60%
+  );
+}
+
+/* Subtle 3D Floating Glass Tech Badges around Hero Frame */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+.hero-tech-pill {
+  animation: floatSlow 5s ease-in-out infinite;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.65), 0 0 16px rgba(16, 185, 129, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--display);
+  letter-spacing: -0.025em;
+}
+
+/* Top Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #10b981, #2dd4bf, #34d399);
+  z-index: 60;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+}
+
+/* Minimal 3D Tech & Skills Background Canvas */
+#canvas3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(6, 24, 28, 0.84);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  box-shadow: 0 20px 50px rgba(2, 20, 24, 0.7);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(4, 20, 24, 0.84) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 212, 191, 0.16);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.glass-card:hover {
+  border-color: rgba(45, 212, 191, 0.52);
+  box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.28), 0 0 22px rgba(45, 212, 191, 0.2);
+  transform: translateY(-4px);
+}
+
+.glass-nav {
+  background: rgba(4, 20, 23, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 212, 191, 0.16);
+}
+
+/* Clean Ritesh-Style Nav Links */
+.site-nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.18s ease;
+}
+.site-nav-link:hover {
+  color: #f0fdfa;
+  background: rgba(45, 212, 191, 0.1);
+}
+.site-nav-link.active {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+/* Editorial Kicker Pill */
+.kicker-pill {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 4px 12px;
+  border-radius: 7px;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+/* Hero Underline Marker (Editorial touch) */
+.hero-mark {
+  position: relative;
+  white-space: nowrap;
+  isolation: isolate;
+}
+.hero-mark::after {
+  content: "";
+  position: absolute;
+  left: 1%;
+  right: 0;
+  bottom: 0.02em;
+  height: 0.12em;
+  background: linear-gradient(90deg, #10b981, #2dd4bf);
+  z-index: -1;
+  border-radius: 4px;
+  transform-origin: 0 50%;
+  animation: markGrow 0.9s 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes markGrow {
+  from { transform: scaleX(0); }
+}
+
+/* Gradient Texts */
+.gradient-text {
+  background: linear-gradient(135deg, #6ee7b7 0%, #2dd4bf 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TL;DR Cards with Top Accent Stripe */
+.tldr-card {
+  position: relative;
+  overflow: hidden;
+}
+.tldr-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 4px;
+  background: var(--top-bar, #10b981);
+}
+
+/* Interactive Architecture SVG Pipeline Styles */
+.arch-svg .node-box {
+  fill: rgba(8, 33, 38, 0.9);
+  stroke: rgba(45, 212, 191, 0.28);
+  stroke-width: 1.5;
+  transition: all 0.25s ease;
+}
+.arch-svg .node-box.core {
+  fill: rgba(16, 185, 129, 0.2);
+  stroke: #10b981;
+  stroke-width: 2;
+}
+.arch-svg .node-box.store {
+  fill: rgba(20, 184, 166, 0.16);
+  stroke: #2dd4bf;
+  stroke-width: 2;
+}
+.arch-svg .src-group {
+  cursor: pointer;
+}
+.arch-svg .src-group:hover .node-box,
+.arch-svg .src-group.active .node-box {
+  fill: rgba(16, 185, 129, 0.24);
+  stroke: #34d399;
+  stroke-width: 2.5;
+}
+.arch-svg .wire {
+  fill: none;
+  stroke: rgba(148, 163, 184, 0.25);
+  stroke-width: 2;
+  transition: stroke 0.25s, opacity 0.25s, stroke-width 0.25s;
+}
+.arch-svg .wire.on {
+  stroke: #34d399;
+  stroke-width: 2.8;
+}
+.arch-svg.filtered .wire.src-wire:not(.on) {
+  opacity: 0.2;
+}
+.dot-pulse-a {
+  fill: #34d399;
+  filter: drop-shadow(0 0 4px #10b981);
+}
+.dot-pulse-b {
+  fill: #2dd4bf;
+  filter: drop-shadow(0 0 4px #2dd4bf);
+}
+
+/* Expandable Details ("+ How I built it") */
+details.case-details {
+  margin-top: 10px;
+}
+details.case-details summary {
+  cursor: pointer;
+  color: #34d399;
+  font-weight: 600;
+  font-size: 13px;
+  width: fit-content;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  transition: all 0.2s ease;
+}
+details.case-details summary:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(52, 211, 153, 0.5);
+}
+details.case-details summary::-webkit-details-marker {
+  display: none;
+}
+details.case-details summary::before {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: rgba(52, 211, 153, 0.2);
+  color: #6ee7b7;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+}
+details.case-details[open] summary::before {
+  content: "−";
+}
+details.case-details[open] summary {
+  margin-bottom: 10px;
+}
+
+/* Telegram Bot Live Alert Mockup (Inside Project #1) */
+.bot-mock {
+  background: #030e11;
+  border-radius: 22px;
+  padding: 12px;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+.bot-mock-inner {
+  background: rgba(8, 30, 35, 0.85);
+  border-radius: 16px;
+  padding: 14px;
+}
+.bot-msg {
+  background: rgba(4, 18, 22, 0.92);
+  border-radius: 11px 11px 11px 3px;
+  padding: 8px 11px;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  border-left: 3.5px solid #10b981;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.bot-msg.warn {
+  border-left-color: #fbbf24;
+}
+.bot-msg.alert {
+  border-left-color: #fb7185;
+}
+
+/* Heartbeat SVG line animation */
+.heartbeat-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: beatPulse 2.6s linear infinite;
+}
+@keyframes beatPulse {
+  to { stroke-dashoffset: -200; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #041417;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f3638;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+.font-mono {
+  font-family: var(--mono);
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.36;
+    transform: scale(1.01);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Full-Body Cartoon Trophy Lifting Animations */
+@keyframes trophyLiftMotion {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+@keyframes bodyBreathe {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes sparkleRise {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translateY(4px) scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.15);
+  }
+}
+
+@keyframes podiumPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1.06);
+  }
+}
+
+.trophy-lift-group {
+  transform-origin: 185px 210px;
+  animation: trophyLiftMotion 2.8s ease-in-out infinite;
+}
+
+.cartoon-upper-body {
+  animation: bodyBreathe 2.8s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  animation: sparkleRise 2.2s ease-in-out infinite;
+}
+
+.sparkle-2 {
+  animation: sparkleRise 2.6s ease-in-out 0.7s infinite;
+}
+
+.sparkle-3 {
+  animation: sparkleRise 2.4s ease-in-out 1.3s infinite;
+}
+
+.podium-glow {
+  transform-origin: 150px 415px;
+  animation: podiumPulse 2.8s ease-in-out infinite;
+}
+
+/* Interactive Tech Pill */
+.tech-tag {
+  transition: all 0.2s ease;
+}
+.tech-tag:hover {
+  transform: translateY(-2px);
+  background-color: rgba(45, 212, 191, 0.2);
+  border-color: rgba(45, 212, 191, 0.6);
+  color: #6ee7b7;
+}
+
+/* Toast alert */
+#toast {
+  visibility: hidden;
+  min-width: 280px;
+  background-color: #062428;
+  color: #f0fdfa;
+  text-align: center;
+  border-radius: 12px;
+  padding: 14px 20px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(45, 212, 191, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
