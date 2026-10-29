@@ -208,29 +208,16 @@
                 <div class="pointer-events-none absolute inset-0 rounded-xl shadow-[inset_0_-18px_24px_-12px_rgba(4,20,23,0.55)]"></div>
               </div>
 
-              <!-- Dedicated Info Bar + Live Worker Heartbeat Below The Photo -->
-              <div class="mt-2.5 px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-emerald-500/25 backdrop-blur-md space-y-2">
-                <!-- Animated Worker Telemetry Line -->
-                <div class="flex items-center justify-between gap-2 bg-[#030d10] px-2.5 py-1.5 rounded-lg border border-emerald-500/15">
-                  <svg class="w-24 h-5" viewBox="0 0 120 28" aria-hidden="true">
-                    <polyline class="heartbeat-line" points="2,14 28,14 36,4 45,24 54,8 62,14 118,14" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="round"/>
-                  </svg>
-                  <span class="text-[10px] font-mono text-emerald-400 font-semibold">React · Django · RabbitMQ</span>
+              <!-- Single Minimal Technical Status Line with Pulse Design at DEV (Matching New Portfolio) -->
+              <div class="mt-2.5 px-3 py-2 rounded-xl bg-slate-950/80 border border-emerald-500/25 backdrop-blur-md flex items-center justify-between">
+                <div class="inline-flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+                  <span class="font-mono text-xs font-semibold tracking-widest uppercase text-emerald-400">DEV</span>
                 </div>
-
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <div>
-                      <div class="text-white font-bold text-xs">Full Stack Developer (Ex-Intern)</div>
-                      <div class="text-[11px] text-emerald-300/80 flex items-center gap-1">
-                        <i class="fa-regular fa-building text-emerald-400"></i> Easy Insights (10 Aug &ndash; 10 Nov 2026)
-                      </div>
-                    </div>
-                  </div>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/90 text-emerald-300 border border-emerald-500/30">
-                    2026 – Now
-                  </span>
+                <div class="flex items-center opacity-90" title="Live System Telemetry">
+                  <svg class="w-20 h-4" viewBox="0 0 120 28" aria-hidden="true">
+                    <polyline class="heartbeat-line" points="2,14 28,14 36,4 45,24 54,8 62,14 118,14" fill="none" stroke="#25b895" stroke-width="2.5" stroke-linejoin="round"/>
+                  </svg>
                 </div>
               </div>
 
